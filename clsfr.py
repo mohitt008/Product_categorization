@@ -21,8 +21,8 @@ holdup = pd.read_csv("classification_testing_data.csv")
 train,test = sklearn.cross_validation.train_test_split(data, train_size= .7)
 train_data, test_data = pd.DataFrame(train, columns= names), pd.DataFrame(test, columns = names)
 holdup_data = holdup.product_name
-vectorizer = sklearn.feature_extraction.text.CountVectorizer(stop_words= 'english')
-#vectorizer = sklearn.feature_extraction.text.TfidfVectorizer(stop_words= 'english', ngram_range = (1,2))
+#vectorizer = sklearn.feature_extraction.text.CountVectorizer(stop_words= 'english')
+vectorizer = sklearn.feature_extraction.text.TfidfVectorizer(stop_words= 'english', ngram_range = (1,2))
 
 #vectorizer = sklearn.feature_extraction.text.TfidfTransformer()
 
